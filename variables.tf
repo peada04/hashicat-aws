@@ -12,6 +12,7 @@ variable "prefix" {
 
 variable "region"{
   description = "The region Terraform deploys your instance"
+  default = "us-east-1"
 }
 
 variable "owner" {
