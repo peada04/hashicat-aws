@@ -6,12 +6,33 @@
 # prompted to enter it (or define it via config file or command line flags.)
 
 variable "prefix" {
-  description = "This prefix will be included in the name of most resources."
+  description = "used to associate resources with a person"
+  default = "dpeacock"
 }
 
-variable "region" {
-  description = "The region where the resources are created."
-  default     = "us-east-1"
+variable "region"{
+  description = "The region Terraform deploys your instance"
+  default = "us-east-1"
+}
+
+variable "owner" {
+  default = "dpeacock"
+  description = "person from HC that deployed the resource"
+}
+
+variable "hashi-region" {
+  default = "nymetro"
+  description = "HC region that the owner belongs to"
+}
+
+variable "purpose" {
+  default = "testing"
+  description = "what the resource is for"
+} 
+
+variable "ttl" {
+  default = "12"
+  description = "time to live before reaper should delete"
 }
 
 variable "address_space" {

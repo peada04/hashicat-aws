@@ -9,7 +9,11 @@ resource "aws_vpc" "hashicat" {
 
   tags = {
     name = "${var.prefix}-vpc-${var.region}"
-    environment = "Production"
+    environment = "test"
+    owner = var.prefix
+    region = var.hashi-region
+    purpose = var.purpose
+    ttl = var.ttl
   }
 }
 
@@ -19,6 +23,11 @@ resource "aws_subnet" "hashicat" {
 
   tags = {
     name = "${var.prefix}-subnet"
+    environment = "test"
+    owner = var.prefix
+    region = var.hashi-region
+    purpose = var.purpose
+    ttl = var.ttl
   }
 }
 
@@ -58,6 +67,11 @@ resource "aws_security_group" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-security-group"
+    environment = "test"
+    owner = var.prefix
+    region = var.hashi-region
+    purpose = var.purpose
+    ttl = var.ttl
   }
 }
 
@@ -71,6 +85,11 @@ resource "aws_internet_gateway" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-internet-gateway"
+    environment = "test"
+    owner = var.prefix
+    region = var.hashi-region
+    purpose = var.purpose
+    ttl = var.ttl
   }
 }
 
@@ -125,6 +144,12 @@ resource "aws_instance" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    Department = "devops"
+    environment = "test"
+    owner = var.prefix
+    region = var.hashi-region
+    purpose = var.purpose
+    ttl = var.ttl
   }
 }
 
