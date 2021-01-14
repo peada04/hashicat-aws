@@ -145,6 +145,7 @@ resource "aws_instance" "hashicat" {
   tags = {
     Name = "${var.prefix}-hashicat-instance"
     Department = "devops"
+    Billing = "test"
     environment = "test"
     owner = var.prefix
     region = var.hashi-region
